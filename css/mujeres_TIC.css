@@ -1,0 +1,474 @@
+@charset "utf-8";
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* variables */
+:root{
+    font-size: 18px;
+    --color_text: #3a4149;
+    --color_1: #5A008F;
+    --color_2: #b3a8db;
+    --color_2trans: #b3a8db5b;
+    --color_3: #C25656;
+    --color_4: #F0C0B2;
+    --color_5: #f8f6f3;
+    --color_w: #fff;
+
+    --font_titulo: "Bellota Text", serif;
+    --font_t: "Forum", serif;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color:var(--color_5);
+    color:var(--color_text);
+    font-family: var(--font_t);
+}
+/* Estilo al header--------------------------- */
+
+body>header{
+    z-index: 3;
+}
+
+h1{
+    font-family: var(--font_titulo);
+    font-size: 3rem;
+    color: var(--color_2);
+    font-weight: bold;
+    padding: 3rem;
+    -webkit-text-stroke: 1.5px var(--color_1);
+    position: relative;
+}
+
+h1 span {
+	position: absolute;
+	right: 0;
+	width: 100%;
+    max-width: 100%;
+	background: var(--color_5);
+	border-left: 1px solid var(--color_text);
+	animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0;
+	}
+}
+
+/* Estilos nav-burguer */
+
+#movil :where(ul, input){
+    display: none;
+}
+
+#laptop{
+    z-index: 3;
+}
+#movil label{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 6px 0 0 10px;
+
+}
+
+#movil :where(label, li):hover{
+    cursor: pointer;
+}
+
+#movil input:checked~label{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#movil input:checked~ul{
+    display: block;
+    position: absolute;
+}
+
+#movil ul{
+    width: 100%;
+}
+
+#movil ul li a{
+    color: var(--color_3);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#movil li {
+    display: block;
+    background: var(--color_4);
+    padding: 20px;
+    border-bottom: 1px solid var(--color_w);
+    font-size: 1.2em;
+}
+
+#movil li:hover, #laptop li:hover{
+    filter: brightness(130%);
+}
+
+#laptop{
+    background-color: var(--color_4);
+    display: none;
+}
+
+
+
+/* Estilo PROYECTOS */
+
+h2{
+    color: var(--color_1);
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem;
+    margin-left: 1rem;
+}
+.proyectos{
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.proyectos article{
+    text-align: left;
+    border: var(--color_1) 2px solid;
+    border-radius: 8px;
+    background-color: var(--color_w);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+
+
+}
+.proyectos article h3{
+    text-align: center;
+    font-weight: bold;
+    color: var(--color_3);
+    font-size: 1.5rem;
+}
+.proyectos article p{
+    padding: 1rem;
+}
+.proyectos a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.proyectos button{
+    font-family: var(--font_t);
+    /* font-weight: bold; */
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    color: var(--color_5);
+    cursor: pointer;
+    margin: 20px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(to right, #d67a9b, #5A008F, #A3A1FF, #C25656);
+    box-shadow: 0 1px 8px 0 rgba(213, 187, 224, 0.75);
+}
+.proyectos button:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.proyectos button:focus {
+    outline: none;
+}
+
+/* Estilos Footer */
+
+footer{
+    background-color: var(--color_4);
+    padding: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+footer p{
+    padding: 1rem;
+}
+
+#avatares{
+    display: none;
+}
+
+.mujer{
+    display: none;
+}
+
+.slidecontainer{
+    display: none;
+}
+
+/* media Queries---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@media(min-width: 768px){
+
+    #laptop{
+        display: flex;
+        justify-content: flex-end;
+        height: 65px;
+    }
+    #laptop ul {
+        display: flex;
+        justify-content: end;
+        padding: 2em;
+        list-style: none;
+        width: 60%;
+        height: 10px;
+    }
+   
+    #laptop ul li a{
+        color: var(--color_w);
+        text-decoration: none;
+        margin-left: 1.5rem;
+    }
+    #movil{
+        display: none;
+    }
+    /* Contenedor PADRE FLECHAS FOTOS MUJERES */
+#avatares{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    /* overflow-x: hidden; */
+    width: 100%;
+}
+
+/* Contenedores hijo Flechas Fotos Mujeres */
+#avatares>div{
+    margin: 1rem 0;
+    width: 200px; /*200 x defecto*/
+    height: 200px; /*200 x defecto*/
+    margin-right: -20px; /*Reduce distancia entre flechas*/
+    
+    /* Forma flecha del DIV */
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+#avatares>div:first-of-type{
+    background-image: url(../img/COLORES/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(2){
+    background-image: url(../img/COLORES/2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(3){
+    background-image: url(../img/COLORES/3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(4){
+    background-image: url(../img/COLORES/4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(5){
+    background-image: url(../img/COLORES/5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(6){
+    background-image: url(../img/COLORES/6.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(7){
+    background-image: url(../img/COLORES/7.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(8){
+    background-image: url(../img/COLORES/8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(9){
+    background-image: url(../img/COLORES/9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#avatares>div:nth-of-type(10){
+    background-image: url(../img/COLORES/10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Animacion simple de crecimiento FLECHAS FOTOS */
+#avatares>div:hover{
+    transition: all 0.5s;
+    transform: scale(1.25);
+}
+
+/* NO CAMBIAR NOMBRE CLASE, ENLAZADO CON JAVASCRIPT. CSS EDITABLE*/
+.mujer{
+    width: 95%;
+    height: 50%;
+    background-color: var(--color_2trans);
+    border-radius: 8px;
+    border: 2px solid var(--color_1);
+    margin: 1rem auto;
+    color: var(--color_text);
+    padding: 2rem;
+
+    /* display: none; */ /*Por defecto estan así mediante JAVASCRIPT incrustado a HTML. NO TOCAR*/
+}
+.mujer h3{
+    font-size: 2rem;
+    color: var(--color_3);
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+.mujer h4{
+    padding: 1rem 0;
+    font-size: 1.3rem;
+}
+
+/* Contenedor general linea temporal */
+.slidecontainer {
+    width: 90%; /* Width of the outside container */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    /* background-color: grey; */
+    margin: auto;
+    position: relative;
+
+  }
+  
+  /* El slider mismo */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 5px; /* Ancho de la linea, en este caso altura porque esta tumbada */
+    background: var(--color_2); /* Color linea temporal */
+    outline: none; /* Remove outline. No hace nada */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+    border-radius: 5px; /*Suavizado slider, suaviza extremos linea*/
+  }
+  
+  /* Slider, personalizar el cursor slider. Chrome*/
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 50px;
+    border: 0;
+    background: url('../img/slider-icon.png');
+    background-size: cover ;
+    /* cursor: pointer; */
+  }
+  
+   /* Slider, personalizar el cursor slider. Mozilla*/
+  .slider::-moz-range-thumb {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    background: url('../img/slider-icon.png');
+    background-size: cover;
+    /* cursor: pointer; */
+  }
+
+/* Apartado PROYECTOS--------------------------------------------------------------------------------------- */
+.proyectos{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.proyectos article{
+    width: 45%;
+
+}
+}
+
+@media(min-width: 1920px){
+    #lineaTempo, #timeTempo{
+        position: absolute;
+      }
+
+    #timeTempo{
+        width: 30px;
+        height: 50px;
+        background-image: url(../img/slider-icon.png);
+        background-size: cover;
+        background-position: center;
+        left: 10px;
+        transition: all 1s ease;
+      }
+
+        /* Slider, personalizar el cursor slider. Chrome*/
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 0;
+    border: 0;
+    background: url('../img/slider-icon.png');
+    background-size: cover ;
+    /* cursor: pointer; */
+  }
+  
+   /* Slider, personalizar el cursor slider. Mozilla*/
+  .slider::-moz-range-thumb {
+    width: 0;
+    height: 0;
+    border: 0;
+    background: url('../img/slider-icon.png');
+    background-size: cover;
+    /* cursor: pointer; */
+  }
+}
+@media(min-width: 2560px){
+    #timeTempo{
+        display: none;
+      }
+}
