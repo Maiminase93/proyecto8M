@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Forum&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
 
 
   <!-- Estilos -->
@@ -20,7 +24,7 @@
   <header>
     <!-- título -->
 
-      <h1>Tejiendo Redes, Codificando Futuro <span>&#160;</span></h1>
+      <h1>Tejiendo Redes, Codificando Futuro</h1>
 
 
     <!-- NAVEGADOR -->
@@ -52,40 +56,72 @@
    <main>
 
    
-
+<aside>
       <h2>Contáctanos</h2>
-      <form action="#" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="asunto">Asunto:</label>
-        <input type="text" id="asunto" name="asunto" required>
-        
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" maxlength="500" required></textarea>
-        
-        <button type="submit">Enviar</button>
-        <button type="reset">Borrar</button>
-    </form>
+
+    <form action="#" method="post" id="formulario1" name="formulario1">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <ul>
+                <!-- Nombre del usuario -->
+                <li>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <span id="nombreError" class="noError"></span>
+                </li>
+                  <!-- Apellido del usuario -->
+                <li>
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" name="apellido" id="apellido">
+                    <span id="apellidoError" class="noError"></span>
+                </li>
+                <!-- Mail del usuario -->
+                <li>
+                    <label for="correo">Correo electronico</label>
+                    <input type="email" id="correo" name="correo">
+                    <span id="correoError" class="noError"></span>
+                </li>
+
+                <!-- Entrada de tipo seleccion multiple -->
+                 <li>
+                    <input type="checkbox" name="condiciones" id="condiciones" value="Acepta">
+                    <label for="condiciones">Acepta las condiciones de nuestra política de privacidad</label>
+                    <span id="politicaError" class="noError"></span>
+                 </li>
+
+            </ul>
+            <input type="button" value="Enviar" id="botonEnvia">
+        </fieldset>
+
+
+
+
+
+    </form></aside>
    </main>
 
    <!-- Pie de página -->
-    <footer>
-      <p>&copy; 2025 CIFO La Violeta | Barcelona</p>
+   <footer>
+
+    <div class="video-container">
+      <video autoplay loop muted playsinline class="background-video">
+          <source src="img/videoFondo.mp4" type="video/mp4">
+      </video>
+  </div>
+
+    <div class="content">   
+      <p>&copy;  Confecció i Publicació de Pàgines Web | 2025 CIFO La Violeta | Barcelona</p>
       <p>
-        Iraida Martínez Rivera <br>
-        Jafet Armadans Sedano<br>
-        Cristina A. Condurache<br>
+      Iraida Martínez Rivera <br>
+      Jafet Armadans Sedano<br>
+      Cristina A. Condurache<br>
       </p>
-    </footer>
-    
+    </div>
+  </footer>
     <!-- Mis Scripts -->
     <script src="js/mujeres_TIC.js"></script>
 
         <!-- Scripts Jafet -->
-        <script src="js/script.js"></script>
+        <!-- <script src="js/script.js"></script> -->
 </body>
 </html>

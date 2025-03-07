@@ -15,65 +15,61 @@
     --color_2: #b3a8db;
     --color_2trans: #b3a8db5b;
     --color_3: #C25656;
+    --color_3trans: #c25656d2;
     --color_4: #F0C0B2;
+    --color_4trans: #f0c0b271;
     --color_5: #f8f6f3;
     --color_w: #fff;
 
-    --font_titulo: "Bellota Text", serif;
+    --font_titulo: "Pathway Extreme", serif;
     --font_t: "Forum", serif;
 }
 
 body{
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     background-color:var(--color_5);
     color:var(--color_text);
     font-family: var(--font_t);
 }
+
+main{
+    background-color: var(--color_5);
+
+}
 /* Estilo al header--------------------------- */
 
 body>header{
+    position: relative;
     z-index: 3;
+    /* background-color: var(--color_2trans); */
+    background-image: url(../img/3.jpg);
+    background-position: center;
+
 }
 
 h1{
     font-family: var(--font_titulo);
     font-size: 3rem;
-    color: var(--color_2);
+    color: var(--color_1);
     font-weight: bold;
     padding: 3rem;
-    -webkit-text-stroke: 1.5px var(--color_1);
     position: relative;
 }
 
-h1 span {
-	position: absolute;
-	right: 0;
-	width: 100%;
-    max-width: 100%;
-	background: var(--color_5);
-	border-left: 1px solid var(--color_text);
-	animation: escribir 5s steps(30) infinite alternate;
-}
 
-@keyframes escribir {
-	from {
-		width: 100%;
-	}
-	to {
-		width: 0;
-	}
-}
 
 /* Estilos nav-burguer */
+
+#movil{
+    z-index: 3;
+}
 
 #movil :where(ul, input){
     display: none;
 }
 
-#laptop{
-    z-index: 3;
-}
+
 #movil label{
     display: inline-block;
     width: 50px;
@@ -119,11 +115,75 @@ h1 span {
 }
 
 #laptop{
-    background-color: var(--color_4);
     display: none;
 }
 
 
+/* Estilo INICIO */
+.inicio h2{
+    display: none;
+}
+
+#inicio-movil{
+    padding: 1rem;
+}
+#inicio-movil header{
+    font-weight: bold;
+}
+#inicio-movil h3{
+    color: var(--color_3);
+
+    font-size: 2rem;
+}
+
+#inicio-movil article{
+    width: 100%;
+    display: grid;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px var(--color_1) solid;
+    margin: 1rem 0;
+    text-align: justify;
+}
+#inicio-movil article>h4{
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+}
+
+#inicio-movil article>figure{
+    order: -1;
+}
+
+#inicio-movil article>figure{
+    width: 100%;
+}
+
+#inicio-movil article>figure>img{
+        width: 100%;
+    }
+
+.main{
+    background-color: var(--color_w);
+}
+
+.inicio p{
+    text-align: justify;
+    padding: 2rem 1rem 0 1rem;
+    
+}
+
+
+#avatares{
+    display: none;
+}
+
+.mujer{
+    display: none;
+}
+
+.slidecontainer{
+    display: none;
+}
 
 /* Estilo PROYECTOS */
 
@@ -135,13 +195,12 @@ h2{
     margin-left: 1rem;
 }
 .proyectos{
-    /* display: grid;
-    grid-template-columns: 1fr; */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
     gap: 1rem;
+    background-color: var(--color_5);
 }
 
 .proyectos article{
@@ -169,9 +228,8 @@ h2{
     justify-content: center;
     text-decoration: none;
 }
-.proyectos button{
+.proyectos button, fieldset input[type="button"]{
     font-family: var(--font_t);
-    /* font-weight: bold; */
     text-align: center;
     width: 150px;
     height: 40px;
@@ -188,7 +246,7 @@ h2{
     background-image: linear-gradient(to right, #d67a9b, #5A008F, #A3A1FF, #C25656);
     box-shadow: 0 1px 8px 0 rgba(213, 187, 224, 0.75);
 }
-.proyectos button:hover {
+.proyectos button:hover, fieldset input[type="button"] {
     background-position: 100% 0;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
@@ -199,57 +257,233 @@ h2{
     outline: none;
 }
 
+
+/* Estilo SABIAS QUE..? */
+
+.sabias-que{
+    background-color: var(--color_w);
+    padding: 1rem 0;
+}
+
+.sabias-que p{
+    padding: 1rem;
+    text-align: justify;
+}
+
+.sabias-que section ul li{
+   list-style-type: none; 
+   padding: 1rem 0;
+   text-align: justify;
+}
+
+.sabias-que section:first-of-type{
+    background-color: var(--color_4trans);
+    text-align: left;
+    border: var(--color_3) 2px solid;
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.sabias-que section:nth-of-type(2){
+    background-color: var(--color_2trans);
+    text-align: left;
+    border: var(--color_1) 2px solid;
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.sabias-que section:first-of-type h3{
+    color: var(--color_3);
+    font-size: 1.5rem;
+
+}
+
+.sabias-que section:nth-of-type(2) h3{
+    color: var(--color_1);
+    font-size: 1.5rem;
+
+}
+.sabias-que section{
+    padding: 1rem;
+}
+/* .sabias-que h3{
+    color: var(--color_1);
+    font-size: 1.5rem;
+} */
+
+/* Estilos FORMULARIO-*/
+
+#formulario1{
+    padding: 1rem;
+}
+
+
+fieldset{
+    margin: 1rem;
+    background-color: var(--color_w);
+    border-radius: 8px;
+    border: 2px var(--color_4) solid ;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+legend{
+    font-size: 1.5rem;
+    margin:1rem;
+    font-weight: bold;
+    color: var(--color_3);
+}
+
+fieldset ul li{
+    list-style: none;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+fieldset input[type="text"], fieldset input[type="email"]{
+    border: 2px var(--color_3) solid;
+    background-color: var(--color_4trans);
+    border-radius: 8px;
+    height: 30px;
+    margin-top: 0.5rem;
+}
+fieldset input[type="button"]{
+    width: 100px;
+    font-size: 0.9rem;
+    justify-self: center;
+
+}
+
+fieldset ul li:last-of-type{
+    flex-direction: row;
+}
+
+fieldset ul li:last-of-type>label{
+        margin-left: 1rem;
+    }
+
+/* Formularios clases */
+
+.noError{
+    visibility: hidden;
+}
+
+.error{
+    visibility: visible;
+    color: var(--color_3);
+    font-weight: 700;
+}
+
+.borderror{
+    border: 2px solid var(--color_3);
+}
+
+.noborderror{
+    border: 1px solid #000;
+}
+
+
 /* Estilos Footer */
+/* video */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Asegura que el video quede detrás del contenido */
+}
+
+.background-video {
+    object-fit: cover; /* Hace que el video cubra toda la pantalla */
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Estilo del contenido */
+.content {
+    position: relative;
+    z-index: 1; /* Para que el contenido quede por encima del video */
+    color: white;
+    text-align: center;
+    padding: 50px;
+    background-color:var(--color_3trans)
+}
 
 footer{
-    background-color: var(--color_4);
-    padding: 2rem;
-    text-align: center;
-    font-weight: bold;
+    position: relative;
+    /* margin-top: 1rem; */
 }
+
+
 footer p{
     padding: 1rem;
 }
 
-#avatares{
-    display: none;
-}
 
-.mujer{
-    display: none;
-}
 
-.slidecontainer{
-    display: none;
-}
 
+#mujeres768{
+    /* background-color: var(--color_w); */
+    padding-bottom: 1rem;
+}
 /* media Queries---------------------------------------------------------------------------------------------------------------------------------------------------------- */
 @media(min-width: 768px){
+    h2{
+        padding: 2rem 1rem;
+    }
 
     #laptop{
+        background-color: var(--color_3);
         display: flex;
         justify-content: flex-end;
         height: 65px;
+        z-index: 3;
+
     }
+
     #laptop ul {
         display: flex;
         justify-content: end;
-        padding: 2em;
+        align-items: center;
+        padding-right: 2rem;
         list-style: none;
         width: 60%;
-        height: 10px;
     }
-   
+
+   #laptop li:hover{
+    cursor: pointer;
+    }
+
     #laptop ul li a{
         color: var(--color_w);
+        /* font-weight: bold; */
         text-decoration: none;
         margin-left: 1.5rem;
     }
+
+    #laptop ul li a:hover{
+        color: var(--color_1);
+
+    }
+
+
+
+
     #movil{
         display: none;
     }
     /* Contenedor PADRE FLECHAS FOTOS MUJERES */
-#avatares{
+
+    #inicio-movil{
+        display: none;
+    }
+
+    #avatares{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -257,121 +491,121 @@ footer p{
     padding: 1rem 2rem;
     /* overflow-x: hidden; */
     width: 100%;
-}
+    }
 
-/* Contenedores hijo Flechas Fotos Mujeres */
-#avatares>div{
-    margin: 1rem 0;
-    width: 200px; /*200 x defecto*/
-    height: 200px; /*200 x defecto*/
-    margin-right: -20px; /*Reduce distancia entre flechas*/
-    
-    /* Forma flecha del DIV */
-    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-}
+    /* Contenedores hijo Flechas Fotos Mujeres */
+    #avatares>div{
+        margin: 1rem 0;
+        width: 200px; /*200 x defecto*/
+        height: 200px; /*200 x defecto*/
+        margin-right: -20px; /*Reduce distancia entre flechas*/
+        
+        /* Forma flecha del DIV */
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    }
 
-#avatares>div:first-of-type{
-    background-image: url(../img/COLORES/1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:first-of-type{
+        background-image: url(../img/COLORES/1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(2){
-    background-image: url(../img/COLORES/2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(2){
+        background-image: url(../img/COLORES/2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(3){
-    background-image: url(../img/COLORES/3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(3){
+        background-image: url(../img/COLORES/3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(4){
-    background-image: url(../img/COLORES/4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(4){
+        background-image: url(../img/COLORES/4.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(5){
-    background-image: url(../img/COLORES/5.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(5){
+        background-image: url(../img/COLORES/5.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(6){
-    background-image: url(../img/COLORES/6.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(6){
+        background-image: url(../img/COLORES/6.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(7){
-    background-image: url(../img/COLORES/7.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(7){
+        background-image: url(../img/COLORES/7.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(8){
-    background-image: url(../img/COLORES/8.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(8){
+        background-image: url(../img/COLORES/8.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(9){
-    background-image: url(../img/COLORES/9.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(9){
+        background-image: url(../img/COLORES/9.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-#avatares>div:nth-of-type(10){
-    background-image: url(../img/COLORES/10.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    #avatares>div:nth-of-type(10){
+        background-image: url(../img/COLORES/10.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-/* Animacion simple de crecimiento FLECHAS FOTOS */
-#avatares>div:hover{
-    transition: all 0.5s;
-    transform: scale(1.25);
-}
+    /* Animacion simple de crecimiento FLECHAS FOTOS */
+    #avatares>div:hover{
+        transition: all 0.5s;
+        transform: scale(1.25);
+    }
 
-/* NO CAMBIAR NOMBRE CLASE, ENLAZADO CON JAVASCRIPT. CSS EDITABLE*/
-.mujer{
-    width: 95%;
-    height: 50%;
-    background-color: var(--color_2trans);
-    border-radius: 8px;
-    border: 2px solid var(--color_1);
-    margin: 1rem auto;
-    color: var(--color_text);
-    padding: 2rem;
+    /* NO CAMBIAR NOMBRE CLASE, ENLAZADO CON JAVASCRIPT. CSS EDITABLE*/
+    .mujer{
+        width: 95%;
+        height: 50%;
+        background-color: var(--color_2trans);
+        border-radius: 8px;
+        border: 2px solid var(--color_1);
+        margin: 1rem auto;
+        color: var(--color_text);
+        padding: 2rem;
 
-    /* display: none; */ /*Por defecto estan así mediante JAVASCRIPT incrustado a HTML. NO TOCAR*/
-}
-.mujer h3{
-    font-size: 2rem;
-    color: var(--color_3);
-    font-weight: bold;
-    padding-bottom: 1rem;
-}
-.mujer h4{
-    padding: 1rem 0;
-    font-size: 1.3rem;
-}
+        /* display: none; */ /*Por defecto estan así mediante JAVASCRIPT incrustado a HTML. NO TOCAR*/
+    }
+    .mujer h3{
+        font-size: 2rem;
+        color: var(--color_3);
+        font-weight: bold;
+        padding-bottom: 1rem;
+    }
+    .mujer h4{
+        padding: 1rem 0;
+        font-size: 1.3rem;
+    }
 
-/* Contenedor general linea temporal */
-.slidecontainer {
+    /* Contenedor general linea temporal */
+    .slidecontainer {
     width: 90%; /* Width of the outside container */
     display: flex;
     flex-direction: row;
@@ -381,8 +615,7 @@ footer p{
     /* background-color: grey; */
     margin: auto;
     position: relative;
-
-  }
+    }
   
   /* El slider mismo */
   .slider {
@@ -394,6 +627,10 @@ footer p{
     outline: none; /* Remove outline. No hace nada */
     opacity: 1; /* Set transparency (for mouse-over effects on hover) */
     border-radius: 5px; /*Suavizado slider, suaviza extremos linea*/
+    
+
+    transition: transform 0.5s ease; /* Transición para el movimiento con 'translateX' */
+
   }
   
   /* Slider, personalizar el cursor slider. Chrome*/
@@ -418,6 +655,14 @@ footer p{
     /* cursor: pointer; */
   }
 
+  .slidecontainer>p{
+    position: absolute;
+    /* transform: rotate(-315deg); */
+    bottom: 0;
+    left: 52%;
+  }
+
+
 /* Apartado PROYECTOS--------------------------------------------------------------------------------------- */
 .proyectos{
     flex-direction: row;
@@ -428,47 +673,178 @@ footer p{
     width: 45%;
 
 }
+
+/* Apartado SABIAS QUE.. */
+.sabias-que{
+    padding: 0 2rem 2rem 2rem;
 }
 
-@media(min-width: 1920px){
-    #lineaTempo, #timeTempo{
+main{
+    background-color: var(--color_5);
+}
+
+/* Apartado  Formularios*/
+aside{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#formulario1{
+    width: 70%;
+    justify-self: center;
+}
+form{
+    padding: 2rem 2rem;
+}
+fieldset ul{
+    padding: 0 1rem;
+}
+fieldset ul li{
+    width: 100%;
+}
+fieldset input[type="text"], fieldset input[type="email"]{
+
+ width: 70%;
+}
+}
+
+
+/* media queries 1024 ----------*/
+@media(min-width: 1024px){
+    /* inicio */
+    .inicio{
+        padding: 0 2.3rem;
+    }
+
+    /* sabias que.. */
+    .sabias-que{
+        padding: 0 2.3rem 2.3rem 2.3rem;
+    }
+    .container{
+        width: 100%;
+        margin: auto;
+    
+    }
+
+    .sabias-que section:first-of-type{
+        background-color: var(--color_w);
+        border-color: var(--color_w);
+    }
+    .sabias-que section:nth-of-type(2){
+        background-color: var(--color_w);
+        border-color: var(--color_w);
+
+    }
+
+    
+    .container h3{
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .container h3::before{
+        content: '+';
         position: absolute;
-      }
+        right: 10px;
+    }
+    
+    .contenido{
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+        text-align: justify;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    
+    .activa .contenido{
+        padding: 1em;
+        height: auto;
+    }
+    
+    .activa h3::before{
+        content: '-';
+    }
+    
+    
+    /* Formulario */
 
-    #timeTempo{
-        width: 30px;
-        height: 50px;
-        background-image: url(../img/slider-icon.png);
-        background-size: cover;
-        background-position: center;
-        left: 10px;
-        transition: all 1s ease;
-      }
+    fieldset{
+        width: 70%;
+      justify-self: center;
 
-        /* Slider, personalizar el cursor slider. Chrome*/
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 0;
-    height: 0;
-    border: 0;
-    background: url('../img/slider-icon.png');
-    background-size: cover ;
-    /* cursor: pointer; */
-  }
-  
-   /* Slider, personalizar el cursor slider. Mozilla*/
-  .slider::-moz-range-thumb {
-    width: 0;
-    height: 0;
-    border: 0;
-    background: url('../img/slider-icon.png');
-    background-size: cover;
-    /* cursor: pointer; */
-  }
+    }
+
 }
+
+
+/* media queries 1440 ----------*/
+@media(min-width: 1440px){
+    body{
+        font-size:1.2rem;
+    }
+    nav{
+        height: 60px;
+    }
+    /* sabias que */
+    .sabias-que{
+        padding: 0 4rem 4rem 4rem;
+    }
+    .sabias-que{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-rows: 1fr 1fr; */
+    }
+    .sabias-que h2{
+        align-self: center;
+        text-align: center;
+    }
+    .sabias-que p{
+        padding-top: 3rem;
+    }
+
+    .sabias-que section{
+      padding-top: 5rem;  
+    }
+
+    #mainSabias{
+        padding-bottom: 2rem;
+        background-color: var(--color_w);
+
+    }
+    /* formulario */
+    fieldset{
+        width: 50%;
+    }
+}
+
+/* media queries 4k ----------*/
 @media(min-width: 2560px){
-    #timeTempo{
-        display: none;
-      }
+    :root{
+        font-size: 2.1rem;
+    }
+    /* inicio */
+    #avatares div{
+        width: 500px;
+        height: 300px;
+
+    }
+    /* proyectos */
+    .proyectos button{
+        font-size: 1rem;
+        width: 300px;
+        height: 100px;
+    }
+    /* formulario */
+    fieldset input[type="text"], fieldset input[type="email"]{
+        height: 65px;
+
+    }
+    fieldset input[type="checkbox"]{
+        width: 40px;
+    }
+
+    fieldset input[type="button"]{
+        width: 200px;
+        height: 80px;
+    }
 }
